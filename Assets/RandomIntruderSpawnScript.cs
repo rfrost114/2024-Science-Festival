@@ -21,15 +21,22 @@ public class RandomIntruderSpawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (timer < spawnRate)
-        //{
-        //    timer += Time.deltaTime;
-        //}
-        //else
-        //{
-        //    spawnRandomIntruder();
-        //    timer = 0;
-        //}
+        if(Input.GetKeyDown(KeyCode.Alpha1) == true)
+        {
+            spawnOneLeft();
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2) == true)
+        {
+            spawnFiveLeft();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9) == true)
+        {
+            spawnFiveRight();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha0) == true)
+        {
+            spawnOneRight();
+        }
 
     }
 
@@ -47,18 +54,31 @@ public class RandomIntruderSpawnScript : MonoBehaviour
         }
     }
 
+    private void spawnIntruder(GameObject newIntruder)
+    {
+        if (reset.GetComponent<resetManagerScript>().speedToggle)
+        {
+            newIntruder.GetComponent<IntruderScript>().SetVelocity(2.2f);
+        }
+        else
+        {
+            newIntruder.GetComponent<IntruderScript>().SetVelocity(1.47f);
+        }
+    }
+
     public void spawnOneLeft()
     {
         intruderReleased = true;
         GameObject newInt = Instantiate(intruder, leftLocation, transform.rotation);
-        if (reset.GetComponent<resetManagerScript>().speedToggle)
-        {
-            newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
-        }
-        else
-        {
-            newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
-        }
+        //if (reset.GetComponent<resetManagerScript>().speedToggle)
+        //{
+        //    newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
+        //}
+        //else
+        //{
+        //    newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
+        //}
+        spawnIntruder(newInt);
         
         //Instantiate(intruder, leftLocation, transform.rotation);
     }
@@ -67,42 +87,45 @@ public class RandomIntruderSpawnScript : MonoBehaviour
     {
         intruderReleased = true;
         GameObject newInt = Instantiate(intruder, rightLocation, transform.rotation);
-        if (reset.GetComponent<resetManagerScript>().speedToggle)
-        {
-            newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
-        }
-        else
-        {
-            newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
-        }
+        //if (reset.GetComponent<resetManagerScript>().speedToggle)
+        //{
+        //    newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
+        //}
+        //else
+        //{
+        //    newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
+        //}
+        spawnIntruder(newInt);
     }
 
     public void spawnFiveLeft()
     {
         intruderReleased = true;
         GameObject newInt = Instantiate(fiveIntruder, leftLocation, transform.rotation);
-        if (reset.GetComponent<resetManagerScript>().speedToggle)
-        {
-            newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
-        }
-        else
-        {
-            newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
-        }
+        //if (reset.GetComponent<resetManagerScript>().speedToggle)
+        //{
+        //    newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
+        //}
+        //else
+        //{
+        //    newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
+        //}
+        spawnIntruder(newInt);
     }
 
     public void spawnFiveRight()
     {
         intruderReleased = true;
         GameObject newInt = Instantiate(fiveIntruder, rightLocation, transform.rotation);
-        if (reset.GetComponent<resetManagerScript>().speedToggle)
-        {
-            newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
-        }
-        else
-        {
-            newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
-        }
+        //if (reset.GetComponent<resetManagerScript>().speedToggle)
+        //{
+        //    newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
+        //}
+        //else
+        //{
+        //    newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
+        //}
+        spawnIntruder(newInt);
     }
 
 
