@@ -70,31 +70,15 @@ public class RandomIntruderSpawnScript : MonoBehaviour
     {
         intruderReleased = true;
         GameObject newInt = Instantiate(intruder, leftLocation, transform.rotation);
-        //if (reset.GetComponent<resetManagerScript>().speedToggle)
-        //{
-        //    newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
-        //}
-        //else
-        //{
-        //    newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
-        //}
         spawnIntruder(newInt);
         
-        //Instantiate(intruder, leftLocation, transform.rotation);
+
     }
 
     public void spawnOneRight()
     {
         intruderReleased = true;
         GameObject newInt = Instantiate(intruder, rightLocation, transform.rotation);
-        //if (reset.GetComponent<resetManagerScript>().speedToggle)
-        //{
-        //    newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
-        //}
-        //else
-        //{
-        //    newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
-        //}
         spawnIntruder(newInt);
     }
 
@@ -102,14 +86,6 @@ public class RandomIntruderSpawnScript : MonoBehaviour
     {
         intruderReleased = true;
         GameObject newInt = Instantiate(fiveIntruder, leftLocation, transform.rotation);
-        //if (reset.GetComponent<resetManagerScript>().speedToggle)
-        //{
-        //    newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
-        //}
-        //else
-        //{
-        //    newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
-        //}
         spawnIntruder(newInt);
     }
 
@@ -117,14 +93,6 @@ public class RandomIntruderSpawnScript : MonoBehaviour
     {
         intruderReleased = true;
         GameObject newInt = Instantiate(fiveIntruder, rightLocation, transform.rotation);
-        //if (reset.GetComponent<resetManagerScript>().speedToggle)
-        //{
-        //    newInt.GetComponent<IntruderScript>().SetVelocity(2.2f);
-        //}
-        //else
-        //{
-        //    newInt.GetComponent<IntruderScript>().SetVelocity(1.47f);
-        //}
         spawnIntruder(newInt);
     }
 
