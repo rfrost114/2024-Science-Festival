@@ -20,4 +20,9 @@ public class ButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene("CAP");
     }
+
+    public void ChangeToExploreSweep()
+    {
+        SceneManager.LoadScene("ExploringSweep");
+    }
 }

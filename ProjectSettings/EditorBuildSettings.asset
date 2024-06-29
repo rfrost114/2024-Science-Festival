@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1comSweep.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ExploringSweep.unity
+    guid: a04fa9c680aa3e7429fe6e1307669ac2
   m_configObjects: {}
