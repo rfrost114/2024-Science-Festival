@@ -5,7 +5,7 @@ using UnityEngine;
 public class defenderSweep : MonoBehaviour
 {
     public Rigidbody2D defender;
-    public float defenderVelocity = 1;
+    public float defenderVelocity = 8;
 
     // 0 = left 1 = right
     private bool direction;
