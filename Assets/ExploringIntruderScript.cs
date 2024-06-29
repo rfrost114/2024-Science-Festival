@@ -10,7 +10,8 @@ public class ExploringIntruderScript : MonoBehaviour
     private Vector3 leftLocation = new Vector3(-8f, 0.5f);
     private Vector3 rightLocation = new Vector3(8f, 0.5f);
     public bool intruderReleased = false;
-
+    public GameObject defender;
+    public float intruderRate = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,22 +22,6 @@ public class ExploringIntruderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) == true)
-        {
-            spawnOneLeft();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2) == true)
-        {
-            spawnFiveLeft();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha9) == true)
-        {
-            spawnFiveRight();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha0) == true)
-        {
-            spawnOneRight();
-        }
 
     }
 
@@ -56,14 +41,7 @@ public class ExploringIntruderScript : MonoBehaviour
 
     private void spawnIntruder(GameObject newIntruder)
     {
-        //if (reset.GetComponent<resetManagerScript>().speedToggle)
-        //{
-        //    newIntruder.GetComponent<IntruderScript>().SetVelocity(2.2f);
-        //}
-        //else
-        //{
-        //    newIntruder.GetComponent<IntruderScript>().SetVelocity(1.47f);
-        //}
+
         newIntruder.GetComponent<IntruderScript>().SetVelocity(3.0f);
     }
 
@@ -96,4 +74,36 @@ public class ExploringIntruderScript : MonoBehaviour
         GameObject newInt = Instantiate(fiveIntruder, rightLocation, transform.rotation);
         spawnIntruder(newInt);
     }
+
+    public void spawnRandomLeft()
+    {
+        if (Random.Range(0.0f, 1.0f) <= intruderRate)
+        {
+            if (Random.Range(0.0f, 1.0f) < 0.5)
+            {
+                spawnFiveLeft();
+            }
+            else
+            {
+                spawnOneLeft();
+            }
+        }
+    }
+
+    public void spawnRandomRight()
+    {
+        if (Random.Range(0.0f, 1.0f) <= intruderRate)
+        {
+            if (Random.Range(0.0f, 1.0f) < 0.5)
+            {
+                spawnFiveRight();
+            }
+            else
+            {
+                spawnOneRight();
+            }
+        }
+    }
+
+
 }

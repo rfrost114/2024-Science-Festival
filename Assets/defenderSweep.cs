@@ -5,7 +5,7 @@ using UnityEngine;
 public class defenderSweep : MonoBehaviour
 {
     public Rigidbody2D defender;
-    public float defenderVelocity = 8;
+    private float defenderVelocity = 8;
 
     // 0 = left 1 = right
     private bool direction;
@@ -71,6 +71,21 @@ public class defenderSweep : MonoBehaviour
             direction = false;
         }
     }
+
+    public bool getDirection()
+    {
+        return direction;
+    }
+
+    public float getVelocity()
+    {
+        return defenderVelocity;
+    }
+
+    public void setVelocity(float newVelocity)
+    {
+        defenderVelocity = newVelocity;
+    } 
 
 
 }
