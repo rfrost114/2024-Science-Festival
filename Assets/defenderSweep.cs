@@ -5,6 +5,8 @@ using UnityEngine;
 public class defenderSweep : MonoBehaviour
 {
     public Rigidbody2D defender;
+
+    // the correct velocity for intercept is anything over 13.5
     private float defenderVelocity = 8;
 
     // 0 = left 1 = right
@@ -18,22 +20,22 @@ public class defenderSweep : MonoBehaviour
         score = GameObject.FindGameObjectWithTag("Score").GetComponent<ScoreScript>();
         defender.velocity = Vector2.left * defenderVelocity;
         direction = false;
-        //defender.transform.position = new Vector3(3, 0.58f);
     }
 
     // Update is called once per frame
     void Update()
     {
         sweepingMotion();
-        //defender.velocity = Vector2.zero;
-        //defender.transform.position = new Vector3(3, 0.58f);
 
     }
 
     private void sweepingMotion()
     {
         Vector2 defenderPosition = defender.position;
-        
+
+
+
+        // direction change
         if ((int)defenderPosition.x == -8)
         {
 
@@ -44,6 +46,18 @@ public class defenderSweep : MonoBehaviour
         {
             defender.velocity = Vector2.left * defenderVelocity;
             direction = false;
+        }
+        else
+        {
+            // if we aren't changing directions, then we should update the speed anyway in case it's changed
+            if (direction)
+            {
+                defender.velocity = Vector2.right * defenderVelocity;
+            }
+            else
+            {
+                defender.velocity = Vector2.left * defenderVelocity;
+            }
         }
     }
 

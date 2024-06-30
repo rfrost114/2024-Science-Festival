@@ -12,6 +12,7 @@ public class ExploringIntruderScript : MonoBehaviour
     public bool intruderReleased = false;
     public GameObject defender;
     public float intruderRate = 1.0f;
+    public float intruderVelocity = 2.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,7 @@ public class ExploringIntruderScript : MonoBehaviour
     private void spawnIntruder(GameObject newIntruder)
     {
 
-        newIntruder.GetComponent<IntruderScript>().SetVelocity(3.0f);
+        newIntruder.GetComponent<IntruderScript>().SetVelocity(intruderVelocity);
     }
 
     public void spawnOneLeft()
