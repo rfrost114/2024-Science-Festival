@@ -32,6 +32,12 @@ public class IntruderScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // if intruder leaves the env
+        if (intruder.position.x > 8.2 || intruder.position.x < -8.2)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetVelocity(float velocity)

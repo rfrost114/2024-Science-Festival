@@ -35,7 +35,7 @@ public class defCAP : MonoBehaviour
 
             if (leftComparison())
             {
-                Debug.Log("problematic comparison Left " + defender.position.x);
+                //Debug.Log("problematic comparison Left " + defender.position.x);
                 defender.velocity = Vector2.right * defenderVelocity;
             }
 
@@ -51,7 +51,7 @@ public class defCAP : MonoBehaviour
 
             if (rightComparison())
             {
-                Debug.Log("problematic comparison Right" + defenderPosition.x);
+                //Debug.Log("problematic comparison Right" + defenderPosition.x);
                 defender.velocity = Vector2.left * defenderVelocity;
             }
 
