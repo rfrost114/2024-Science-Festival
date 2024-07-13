@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LeftColliderScript : MonoBehaviour
 {
 
     public int IntruderCount = 0;
+    public Text text;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +26,12 @@ public class LeftColliderScript : MonoBehaviour
         if (collision.gameObject.layer == 7)
         {
             IntruderCount += 1;
+            text.text = IntruderCount.ToString();
         }
         else if (collision.gameObject.layer == 8)
         {
             IntruderCount += 5;
+            text.text = IntruderCount.ToString();
         }
 
     }
@@ -37,10 +41,12 @@ public class LeftColliderScript : MonoBehaviour
         if (collision.gameObject.layer == 7)
         {
             IntruderCount -= 1;
+            text.text = IntruderCount.ToString();
         }
         else if (collision.gameObject.layer == 8)
         {
             IntruderCount -= 5;
+            text.text = IntruderCount.ToString();
         }
     }
 
