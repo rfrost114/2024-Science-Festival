@@ -1052,6 +1052,7 @@ MonoBehaviour:
   leftTextThree: {fileID: 1318084687}
   rightTextThree: {fileID: 522339700}
   ButtonText: {fileID: 1289395274}
+  toggleSpeedButton: {fileID: 1444033685}
   isVisible: 0
 --- !u!1 &743413601
 GameObject:
