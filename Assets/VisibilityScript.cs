@@ -19,6 +19,7 @@ public class VisibilityScript : MonoBehaviour
     public Text rightTextThree;
 
     public Text ButtonText;
+    public Button toggleSpeedButton;
 
     [SerializeField] private bool isVisible = false;
 
@@ -31,6 +32,8 @@ public class VisibilityScript : MonoBehaviour
         leftTextThree.gameObject.SetActive(isVisible);
         rightTextTwo.gameObject.SetActive(isVisible);
         rightTextThree.gameObject.SetActive(isVisible);
+        //terrible hack
+        toggleSpeedButton.gameObject.SetActive(isVisible);
     }
 
     // Update is called once per frame
@@ -48,6 +51,10 @@ public class VisibilityScript : MonoBehaviour
         leftTextThree.gameObject.SetActive(isVisible);
         rightTextTwo.gameObject.SetActive(isVisible);
         rightTextThree.gameObject.SetActive(isVisible);
+        leftLineOne.GetComponent<Renderer>().enabled = isVisible;
+        leftLineTwo.GetComponent<Renderer>().enabled = isVisible;
+        rightLineOne.GetComponent<Renderer>().enabled = isVisible;
+        rightLineTwo.GetComponent<Renderer>().enabled = isVisible;
 
         if (isVisible) { ButtonText.text = "Hide Regions";}
         else { ButtonText.text = "Show Regions"; }
